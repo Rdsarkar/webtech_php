@@ -1,0 +1,38 @@
+body {
+    background-image: linear-gradient(rgba(20, 20, 20, 1), rgba(20, 20, 20, .5)), url(../images/laptop-technology-ipad-tablet-35550.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: white;
+}
+
+
+.simple-form {
+    text-align: center;
+    margin: 100px 525px;
+}
+
+#registration {
+    
+    width: 100%;
+    background-color: black;
+    opacity: 0.6;
+    padding: 50px 0px;
+}
+
+#button {
+    width: 250px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#dob{
+    border-radius: 5px;
+}
+
+#but {
+
+    border-radius: 5px;
+
+    
+}

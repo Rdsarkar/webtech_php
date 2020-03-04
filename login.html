@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function first() {
+            var un = document.login.username.value;
+            if (un.length < 4) {
+                document.login.username.style.color = "red";
+
+                document.getElementById("msg3").innerHTML = "invalid name";
+            } else {
+                document.login.username.style.color = "black";
+                document.getElementById("msg3").innerHTML = "valid name";
+            }
+
+        }
+
+        function second() {
+            var pa = document.login.pass.value;
+            if (pa.length < 8) {
+                document.login.pass.style.color = "red";
+
+                document.getElementById("msg4").innerHTML = "invalid pass";
+            } else {
+                document.login.pass.style.color = "black";
+                document.getElementById("msg4").innerHTML = "valid pass";
+            }
+
+        }
+
+        function validate() {
+            var flag = true;
+            var unn = document.login.username.value;
+            var pas = document.login.pass.value;
+
+            var str = "";
+            if (unn.length == 0) {
+                flag = false;
+                str = "must type user name";
+            } else if (pas.length < 8) {
+                flag = false;
+                str = "8 digit pass required";
+            }
+            document.getElementById("msg").innerHTML = str;
+            return flag;
+        }
+
+    </script>
+    <link rel="stylesheet" href="css/login.css" type="text/css">
+    <title>User Login</title>
+</head>
+
+<body>
+    <div class="login-form">
+        <form action="loginse.php" id="login" method="post" name="login">
+            <br><br><br>
+            <label for="uname">User Name:</label>
+            <input onkeyup="first()" type="text" name="username" value="" id="button" placeholder="Input User Name"><br />
+            <span id="msg3"></span><br />
+            <label for="password">Password:</label>
+            <input onkeyup="second()" type="password" name="pass" value="" id="button" placeholder="Input Password"><br />
+            <span id="msg4"></span>
+            <br />
+
+            <input onclick="return validate()" type="submit" value="Confirm" id="but">
+            <span style="color:red" id="msg"></span>
+            
+            
+
+            <br><br>
+            <a href="reg.html" id="but">Sign Up</a>
+            <br><br>
+        </form>
+    </div>
+</body>
+
+</html>
+
+<?php
+session_start();
+if(isset($_SESSION["msg"])){
+	echo $_SESSION["msg"];
+	unset($_SESSION["msg"]);
+}
+?>

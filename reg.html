@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+	<script type="text/javascript">
+	function fname(){
+		var fn= document.registration.firstname.value;
+		if(fn.length <5 ){
+			document.registration.firstname.style.color = "red";
+			document.getElementById("msg1").innerHTML = "invalid First Name";
+		}
+		else{
+			document.registration.firstname.style.color = "black";
+			document.getElementById("msg1").innerHTML = "valid First Name";
+		}
+	}
+	function lname(){
+		var ln= document.registration.lastname.value;
+		if(ln.length <5 ){
+			document.registration.lastname.style.color = "red";
+			document.getElementById("msg2").innerHTML = "invalid last Name";
+		}
+		else{
+			document.registration.lastname.style.color = "black";
+			document.getElementById("msg2").innerHTML = "valid Last Name";
+		}
+	}
+	function unam(){
+		var un= document.registration.uname.value;
+		if(un.length <5 ){
+			document.registration.uname.style.color = "red";
+			document.getElementById("msg3").innerHTML = "invalid uName";
+		}
+		else{
+			document.registration.uname.style.color = "black";
+			document.getElementById("msg3").innerHTML = "valid uName";
+		}
+	}
+	function phonen(){
+		var ph= document.registration.phone.value;
+		if(ph.length != 11 ){
+			document.registration.phone.style.color = "red";
+			document.getElementById("msg4").innerHTML = "invalid phone number";
+		}
+		else{
+			document.registration.phone.style.color = "black";
+			document.getElementById("msg4").innerHTML = "valid phone number";
+		}
+	}
+	function emai(){
+		var em= document.registration.email.value;
+		if(em.indexOf("@")<1){
+			document.registration.email.style.color = "red";
+			document.getElementById("msg5").innerHTML = "invalid email";
+		}
+		
+		else{
+			document.registration.email.style.color = "black";
+			document.getElementById("msg5").innerHTML= "valid email";
+		}
+	}
+	function pass(){
+	var pa = document.registration.password.value;
+		if(pa.length <8 ){
+			document.registration.password.style.color = "red";
+			document.getElementById("msg6").innerHTML = "invalid pass";
+		}
+		else{
+			document.registration.password.style.color = "black";
+			document.getElementById("msg6").innerHTML = "valid pass";
+		}
+	}
+	function cpass()
+	{
+		var cp = document.registration.confirmpass.value;
+		if(cp.length <8 ){
+			document.registration.confirmpass.style.color = "red";
+			document.getElementById("msg7").innerHTML = "invalid pass";
+		}
+		else{
+			document.registration.confirmpass.style.color = "black";
+			document.getElementById("msg7").innerHTML = "valid pass";
+		}
+	}
+	
+	function validation()
+	{
+		var flag=true;
+		var fnv=document.registration.firstname.value;
+		var lnv=document.registration.lastname.value;
+		var unv=document.registration.uname.value;
+		var ddv = document.registration.dob.value;
+		
+	
+		var phv=document.registration.phone.value;
+		var emv=document.registration.email.value;
+		var pav=document.registration.password.value;
+		var cpv=document.registration.confirmpass.value;
+		var str="";
+		
+		if(fnv.length==0){
+		flag=false;
+		str="must type first  name";
+	}
+	else if(lnv.length==0){
+		flag=false;
+		str="must type last  name";
+	}
+	
+	else if(unv.length==0){
+		flag=false;
+		str="must type uname"
+	}
+		
+	else if(ddv.length<1){
+				flag=false;
+				str="must select your DOB";
+		}
+		
+	else if(phv.length !=11){
+		flag=false;
+		str="must provide your phone number";
+	}
+	
+	else if(emv.indexOf("@")<1){
+		flag=false;
+		str="invalid email";
+	}
+	
+	else if(pav.length<8){
+		flag=false;
+		str="At least 8 digit pass required";
+	}
+	
+	else if(cpv!=pav){
+		flag=false;
+		str="passworods must match";
+	}
+	
+	
+		ErrorText= "";
+		if ( ( document.registration.gender[0].checked == false ) && ( document.registration.gender[1].checked == false ) )
+				{
+					alert ( "Please choose your Gender: Male or Female" );
+					return false;
+				}
+				
+		if (ErrorText= "") { form.submit() }	
+		
+		document.getElementById("msg").innerHTML=str;
+	return flag;
+	}
+	
+	</script>
+    <link rel="stylesheet" href="css/reg.css">
+    <title>Registration</title>
+</head>
+
+<body>
+    <div class="simple-form">
+        <form action="server2.php" id="registration" method="post" name="registration">
+            <label for="fname">First Name:</label><br>
+            <input onkeyup="fname()" type="text" name="firstname" id="button" placeholder="Enter First Name"><br>
+			<span id="msg1"></span>
+			<br>
+            <label for="lname">Last Name:</label><br>
+            <input onkeyup="lname()" type="text" name="lastname" id="button" placeholder="Enter Last Name"><br>
+			<span id="msg2"></span><br>
+            <label for="uname">User Name:</label><br>
+            <input onkeyup="unam()" type="text" name="uname" id="button" placeholder="Enter User Name"><br>
+			<span id="msg3"></span><br>
+            <label for="dob">Date Of Birth:</label>
+            <input onclick="dd()" type="date" name="dob" id="dob"><br>
+			<span id="msg8"></span><br>
+			<br>
+            <label for="gender">Select Gender</label><br>
+            <input type="radio" name="gender" value="male" >Male<br />
+            <input type="radio" name="gender" value="female">Female<br />
+            <br>
+            <label for="phone">Phone Number:</label><br>
+            <input onkeyup="phonen()" type="number" name="phone" id="button" placeholder="Enter Phone Number"><br>
+			<span id="msg4"></span><br>
+            <label for="email">Email</label><br>
+            <input onkeyup="emai()" type="email" name="email" id="button" placeholder="Enter Email"><br>
+			<span id="msg5"></span>
+			<br>
+            <label for="pass">Password</label><br>
+            <input onkeyup="pass()" type="password" name="password" id="button" placeholder="Enter Password"><br>
+			<span id="msg6"></span><br>
+            <label for="conpass">Confirm Password</label><br>
+            <input onkeyup="cpass()" type="password" name="confirmpass" id="button" placeholder="Confirm Password"><br>
+			<span id="msg7"></span>
+			<br>
+            <br><br>
+            <input onclick="return validation()" type="submit" value="register" id="but"><br>
+			<span style="color:red" id="msg"></span>
+        </form>
+    </div>
+</body>
+
+</html>

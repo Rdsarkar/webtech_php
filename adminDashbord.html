@@ -1,0 +1,127 @@
+<?php
+session_start();
+if($_SESSION["admin"]=="")
+{
+	header("Location:adminLogin.php");
+}
+
+?>
+<html>
+
+<head>
+
+    <title>Product Modification</title>
+
+    <script type="text/javascript">
+		function ppname(){
+				var pname1=document.mmf.pname.value;
+				if(pname1.length<3){
+				document.mmf.pname.style.color = "red";
+			document.getElementById("msg1").innerHTML = "invalid product Name";
+				}
+				else{
+				document.mmf.pname.style.color= "black";
+				document.getElementById("msg1").innerHTML="valid product name";
+				}
+			}
+			
+			function ppricef(){
+				var price1 = document.mmf.pprice.value;
+				if(price1.length<3){
+				document.mmf.pprice.style.color = "red";
+			document.getElementById("msg2").innerHTML = "invalid product price";
+				}
+				else{
+				document.mmf.pprice.style.color= "black";
+				document.getElementById("msg2").innerHTML="valid product price";
+				}
+			}
+        function validation() {
+			flag = true;
+			var str = "";
+            var pname = document.mmf.pname.value;
+            var pqua = document.mmf.pqua.value;
+            var pprice = document.mmf.pprice.value;
+            var pcatagory = document.mmf.pcatagory.value;
+            var fileToUpload = document.mmf.fileToUpload.value;
+            var pdes = document.mmf.pdes.value;
+
+            if (pqua.value == null || pqua.value == "") {
+			
+			}
+            if (pname.value == null || pname.value == "") {}
+            if (pprice.value == null || pprice.value == "") {}
+            if (pcatagory.value == null || pcatagory.value == "") {}
+            if (fileToUpload.value == null) {
+                alart("Product image is requred")
+            }
+
+            if (pdes.length >= 250) {
+
+            }
+
+        }
+
+    </script>
+</head>
+
+<body bgcolor="#EDEEF0">
+    <table width=100%>
+        <tr>
+            <td align="center"><a href="home.html"><img src="logo.jpg" alt="AVAKEN LOGO"></a></td>
+
+            <td><a href="logout(admin).php">
+                    <font family="proxima nova" color="black">LogOut</font>
+                </a></td>
+            <td>
+                <font family="proxima nova" color="black">Admin</font>
+            </td>
+            <td><img src="images/icons/cart.png" alt="Cart" height="90" width="90"></td>
+
+        </tr>
+    </table>
+
+    <table width=100% height="60% ">
+        <tr>
+            <td width=45%>
+                <p style="padding-left: 40px;font-size: 32px">ADD PRODUCT</p> <br />
+                
+
+                <form action="upload.php" method="post" enctype="multipart/form-data" name="mmf">
+                    <pre>
+					Product Name : 	        <input onkeyup="ppname()" type="text" name="pname" ><br>
+					Product Quantity: <input type="text" name="pqua" ><br>
+					Product Price : 	<input onkeyup="ppricef()" type="text" name="pprice" ><br>
+					Product Catagory :	<select name="pcatagory" >
+							<option value=" ">choose a option</option>
+							<option value="boys">Boys</option>
+							<option value="girls">Girls</option>
+							<option value="Kid">kids</option>
+							</select>
+							<br>
+	                                Select file to up load :<input type="file" name="fileToUpload" >
+					
+	                                Product Discription :
+					<textarea rows="4" cols="50" name="pdes"></textarea>
+				
+	                                           <input onclick="return validation()"type="submit" value="add product" name="aproduct"></pre>
+                </form>
+
+                <br />
+                
+                <form action="upload.php" method="post" enctype="multipart/form-data" name="mfm">
+
+
+
+                </form>
+
+
+        </tr>
+
+
+
+    </table>
+
+</body>
+
+</html>

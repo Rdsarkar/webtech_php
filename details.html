@@ -1,0 +1,93 @@
+<html>
+    <title>AVAKEN</title>
+    <head>
+        <style>
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          padding: 12px 16px;
+          z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+        </style>
+    </head>
+    <body bgcolor="#F7F8F9">
+        <form action="cardsarver.php" method="post">
+        <table  width=100% bgcolor="#EDEEF0">
+            <tr>
+                <td align="center"><img src="logo.jpg" alt="AVAKEN LOGO"  ><a href="home.html"></a></td>
+                <td><input type="text" name="search" value="search for product" style=" width:450px; hight:45px;"> 
+                <input type="button" value=" search "style="width:70px; hight:45px; color: red;"> </td>
+                <td><a href="login.html"><font family="proxima nova" color="black">LOGIN & SIGNUP</font></a></td>
+                <td><font family="proxima nova" color="black">MORE</font></td>
+                <td><img src="images\icons\cart.png" alt="Cart" height="90" width="90"></td>
+    
+            </tr>
+           
+        </table  >
+        <table width=100%  height="8% "bgcolor="#29224E">
+            <tr>
+               
+                        
+            
+                <th width="18%" >
+                    <div class="dropdown">
+                        <span><font color="white">BOYS</font></span>
+                          <div class="dropdown-content">
+                            <p>SHIRT</p>
+                              <p>T-SHIRT</p>
+                              <p>SHOE</p>
+                       
+                             
+                          </div>
+                        </div> 
+                </th>
+                <th width="18%">
+                    <div class="dropdown">
+                    <span><font fanily="lato bold" color="White">GIRLS</font></span>
+                    <div class="dropdown-content">
+                            <p>Sharee</p>
+                              <p>tops</p>
+                              <p>SHOE</p>
+                        </div>
+                    </div>
+                    </th>
+                <th width="18%"><a href="kid.html"><font fanily="lato bold" color="White">KIDS ZONE</font></a></th>
+                <th width="18%"><a href="winter"><font fanily="lato bold" color="White">WINTER</font></a></th>
+                <th width="18%"><a href="offer.html"><font fanily="lato bold" color="White">OFFER ZONE</font></th>
+                
+            </tr>
+        </table>
+        <br><br>
+        <table>
+            <tr>
+                <td width="25%"><img src="images\boyes\t_shirt\artcell.jpg"></td>
+                <td><b><font size="5">ARTCELL T-Shirt</font></b>
+                    <br><br>
+                    <font color="green"><b>Price:500</b></font>
+                    <ui>
+                        <li>1</li>
+                        <li>2</li>
+                    </ui>
+                    <br><br>
+                <input type="submit" value="add to card" style=" width:250px; height: 100px; background-color: green; color: white" aligne="center"; >
+            </td>
+                
+            </tr>
+        </table>
+        </form>
+        
+        
+    </body>
+</html>

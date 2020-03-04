@@ -1,0 +1,35 @@
+body{
+    background-image: linear-gradient(rgba(20, 20, 20, .8), rgba(20, 20, 20, .5)), url(../images/black-laptop-beside-black-computer-mouse-inside-room-669996.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: white;
+}
+
+#login {
+    
+    width: 90%;
+    background-color: black;
+    opacity: 0.6;
+    padding: 70px 0px;
+}
+
+.login-form{
+    text-align: center;
+    
+    margin: 170px 525px;
+}
+
+#button {
+    width: 250px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+#but {
+
+    border-radius: 5px;
+
+    
+}
